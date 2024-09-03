@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+}
+
+:root {
+  --primary-100: #5eed54;
+  --primary-200: #40ea34;
+  --primary-300: #25e218;
+  --primary-400: #20c214;
+  --primary-500: #1ba211;
+  --primary-600: #15810e;
+  --primary-700: #10610a;
+  --primary-800: #0b4107;
+  --primary-900: #052003;
+  --primary-1000: #000000;
+}
+
+.color-row {
+  height: 60px;
+  font: bold;
+  color: white;
+
+  padding-inline: 1em;
+}
+.color-wrapper {
+  height: 100%;
+}
+
+/* SELECTION */
+::selection {
+  color: white;
+  background: #2595be80;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  background-color: #333;
+  width: 17px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #aaaaaa;
+  border: 3.2px solid #333;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #777;
+}
+
+.color-picker {
+  background-color: transparent;
+  border: 0px;
+  outline: 0px;
+  width: 0px;
+  padding-inline: 1em;
+
+  position: absolute;
+  top: 0;
+  right: 10px;
+  top: 0px;
+  bottom: 0px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  justify-content: center;
+}
+.color-picker::before {
+  content: '🎨';
+  position: absolute;
+  font-size: 20px;
+}
+.color-picker-ctn {
+  position: relative;
+}
+
+footer {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding-top: 1em;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.range {
+  border: 0px;
+  outline: 0px;
+}
+input[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: #d4d4d4;
+  background-image: linear-gradient(to right, #9a9a9a, #000000);
+  border-radius: 5px;
+  width: 100%;
+  padding: 4px;
+  cursor: pointer;
+  accent-color: white;
+}
+
+.range-ctn {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  gap: 10px;
+}
