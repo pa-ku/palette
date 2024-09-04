@@ -13,11 +13,11 @@ export default function TailwindConfig({ children, name = 'test' }) {
       </button>
 
       <dialog className='bg-black w-96 p-5 rounded-lg m-auto' ref={refModal}>
-        <h1 className='text-slate-400 text-xl font-bold'>Tailwind Config</h1>
-        <p className='text-slate-200'>
+        <h1 className='text-white text-2xl font-bold'>Tailwind Config</h1>
+        <p className='text-gray-400'>
           Agrega en tu archivo tailwind.config.js dentro de theme y extend{' '}
         </p>
-        <div className='text-slate-200 bg-slate-800 rounded-lg my-2 pl-5 flex flex-col'>
+        <div className='text-gray-200  bg-gray-800 rounded-lg my-2 p-3 flex flex-col'>
           <span>{`colors: {`}</span>
           <span className='pl-3'>{`${name}: {`}</span>
           <ul className='pl-5'>
@@ -36,7 +36,7 @@ export default function TailwindConfig({ children, name = 'test' }) {
         </div>
 
         <button
-          className='w-full bg-red-500 rounded-lg mt-2 text-white py-2'
+          className='w-full bg-white  rounded-lg mt-2 text-black font-bold py-2'
           onClick={closeModal}
         >
           Close
