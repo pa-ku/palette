@@ -7,7 +7,7 @@ import TailwindConfig from './components/TailwindConfig'
 import Title from './components/Title'
 
 const MIN_RANGE = 1
-const MAX_RANGE = 12
+const MAX_RANGE = 10
 function ColorGradient() {
   const [baseColor, setBaseColor] = useState('#42a4ff')
   const [colorName, setColorName] = useState('primary')
@@ -56,12 +56,12 @@ function ColorGradient() {
             <input
               className='range '
               type='range'
-              min={MIN_RANGE}
-              max={MAX_RANGE}
+              min={4}
+              max={13}
               value={range}
               onChange={(e) => setRange(e.target.value)}
             />
-            <p className='font-bold w-28 text-black '>Range {range}</p>
+            <p className='font-bold w-28 text-black '>Brightness</p>
           </div>
 
           <input
