@@ -30,6 +30,9 @@ export default function TailwindConfig({ children, name = 'test' }) {
             <li>{`700: 'var(--${name}-700)',`}</li>
             <li>{`800: 'var(--${name}-800)',`}</li>
             <li>{`900: 'var(--${name}-900)',`}</li>
+            <li>{`1000: 'var(--${name}-1000)',`}</li>
+            <li>{`1100: 'var(--${name}-1100)',`}</li>
+            <li>{`1200: 'var(--${name}-1200)',`}</li>
             <li>{`},`}</li>
           </ul>
           <p>{`}`}</p>

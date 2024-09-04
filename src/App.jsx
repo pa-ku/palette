@@ -7,7 +7,7 @@ import TailwindConfig from './components/TailwindConfig'
 import Title from './components/Title'
 
 const MIN_RANGE = 1
-const MAX_RANGE = 10
+const MAX_RANGE = 12
 function ColorGradient() {
   const [baseColor, setBaseColor] = useState('#42a4ff')
   const [colorName, setColorName] = useState('primary')
@@ -34,9 +34,9 @@ function ColorGradient() {
 
   return (
     <>
-      <header className='text-white w-full h-full flex items-center flex-col py-5 gap-2'>
+      <header className='bg-gradient-to-t from-white text-white w-full h-full flex items-center flex-col py-5 gap-2'>
         <Title>Palete</Title>
-        <section className='w-80 space-y-3'>
+        <section className='w-80 space-y-4 pb-6'>
           <div className='w-80 color-picker-ctn '>
             <input
               type='text'
@@ -56,12 +56,12 @@ function ColorGradient() {
             <input
               className='range '
               type='range'
-              min={1}
-              max={10}
+              min={MIN_RANGE}
+              max={MAX_RANGE}
               value={range}
               onChange={(e) => setRange(e.target.value)}
             />
-            <p className='font-bold w-24 text-black '>Range {range}</p>
+            <p className='font-bold w-28 text-black '>Range {range}</p>
           </div>
 
           <input
@@ -78,11 +78,21 @@ function ColorGradient() {
           </div>
         </section>
       </header>
-      <main className='color-wrapper'>
+      <main className=' border-gray-800  black color-wrapper'>
         {Object.entries(gradientColors).map(([key, value]) => (
-          <p className='color-row' key={key} style={{ backgroundColor: value }}>
-            {key}: {value};
-          </p>
+          <div
+            className={`  border-gray-800 flex h-full py-3  justify-start items-center`}
+            key={key}
+            style={{ backgroundColor: value }}
+          >
+            <p
+              className={`${
+                key.includes('500') && ' w-full font-bold'
+              } color-row flex justify-start items-center bg-gray-800  w-60 rounded-r-xl `}
+            >
+              {key}: {value};
+            </p>
+          </div>
         ))}
       </main>
     </>
