@@ -56,9 +56,6 @@ function ColorGradient() {
             <input
               className='range '
               type='range'
-              style={{
-                backgroundImage: `linear-gradient(to right, #ffffff, ${baseColor})`,
-              }}
               min={1}
               max={10}
               value={range}

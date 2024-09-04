@@ -23,6 +23,10 @@
   --primary-1000: #000000;
 }
 
+h1 {
+  font-weight: 300;
+}
+
 .color-row {
   height: 60px;
   font: bold;

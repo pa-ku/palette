@@ -1,7 +1,7 @@
 export default function Title({ children }) {
   return (
     <>
-      <h1 className=' flex items-center font-thin justify-center text-8xl text-center py-5  text-blue-500 stroke-blue-500 fill-blue-500 '>
+      <h1 className=' flex items-center justify-center text-8xl text-center py-5 text-black stroke-black fill-black '>
         <svg
           className='w-32 h-32'
           viewBox='0 0 24 24'
