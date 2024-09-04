@@ -27,7 +27,8 @@ function ColorGradient() {
   }
 
   useEffect(() => {
-    setGradientColors(generateGradientColors(baseColor))
+    const gradientColor = generateGradientColors(baseColor)
+    setGradientColors(gradientColor)
   }, [baseColor, colorName, range])
 
   return (
@@ -55,12 +56,12 @@ function ColorGradient() {
               style={{ background: baseColor }}
               className={`border-4  w-full px-5 py-3 rounded-lg font-bold outline-none text-xl`}
               value={baseColor}
-              onChange={(e) => setBaseColor(`${e.target.value}`)}
+              onChange={(e) => setBaseColor(e.target.value)}
             />
             <input
               className='color-picker hover:scale-110 duration-100'
               type='color'
-              onChange={(e) => setBaseColor(`${e.target.value}`)}
+              onChange={(e) => setBaseColor(e.target.value)}
               value={baseColor}
             />
           </div>

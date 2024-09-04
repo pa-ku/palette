@@ -7,7 +7,7 @@ export default function TailwindConfig({ children, name = 'test' }) {
     <>
       <button
         onClick={openModal}
-        className='border-2 font-bold border-black text-black px-3 rounded-lg py-1'
+        className='border-2 font-bold border-black hover:bg-black hover:text-white text-black px-3 rounded-lg py-1'
       >
         {children}
       </button>
