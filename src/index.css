@@ -6,7 +6,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   margin: 0;
 }
 
@@ -24,7 +24,7 @@
 }
 
 h1 {
-  font-weight: 300;
+  font-weight: 200;
 }
 
 .color-row {
