@@ -10,7 +10,7 @@ const MIN_RANGE = 1
 const MAX_RANGE = 10
 function ColorGradient() {
   const [baseColor, setBaseColor] = useState('#42a4ff')
-  const [colorName, setColorName] = useState('--primary')
+  const [colorName, setColorName] = useState('primary')
   const [range, setRange] = useState(7)
   const [gradientColors, setGradientColors] = useState({})
 
@@ -21,7 +21,7 @@ function ColorGradient() {
     for (let i = MIN_RANGE; i <= MAX_RANGE; i++) {
       const step = (5 - i) * range // Ajustamos la luminosidad
       const newL = Math.max(0, Math.min(100, baseHSL[2] + step))
-      colors[`${colorName}-${i}00`] = hslToHex(baseHSL[0], baseHSL[1], newL)
+      colors[`--${colorName}-${i}00`] = hslToHex(baseHSL[0], baseHSL[1], newL)
     }
 
     return colors
