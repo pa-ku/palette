@@ -34,7 +34,7 @@ function ColorGradient() {
 
   return (
     <>
-      <header className='bg-gradient-to-t from-white text-white w-full h-full flex items-center flex-col py-5 gap-2'>
+      <header className='bg-gradient-to-t overflow-hidden from-white relative text-white w-full h-full flex items-center flex-col py-5 gap-2'>
         <Title>Palete</Title>
         <section className='w-80 space-y-4 pb-6'>
           <div className='w-80 color-picker-ctn '>
@@ -87,7 +87,7 @@ function ColorGradient() {
           >
             <p
               className={`${
-                key.includes('500') && ' w-full font-bold'
+                key.includes('500') && 'font-bold'
               } color-row flex justify-start items-center bg-gray-800  w-60 rounded-r-xl `}
             >
               {key}: {value};
