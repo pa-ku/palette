@@ -34,7 +34,7 @@ function ColorGradient() {
 
   return (
     <>
-      <header className='bg-gradient-to-t overflow-hidden from-white relative text-white w-full h-full flex items-center flex-col py-5 gap-2'>
+      <header className=' relative bg-gray-800  text-white w-full h-full flex items-center flex-col py-5 gap-2'>
         <Title>Palete</Title>
         <section className='w-80 space-y-4 pb-6'>
           <div className='w-80 color-picker-ctn '>
@@ -52,6 +52,12 @@ function ColorGradient() {
               value={baseColor}
             />
           </div>
+          <input
+            className='border-4 font-bold border-gray-300 w-full py-3 bg-white text-black px-4 rounded-lg'
+            type='text'
+            value={colorName}
+            onChange={(e) => setColorName(e.target.value)}
+          />
           <div className='range-ctn w-full'>
             <input
               className='range '
@@ -61,15 +67,9 @@ function ColorGradient() {
               value={range}
               onChange={(e) => setRange(e.target.value)}
             />
-            <p className='font-bold w-28 text-black '>Brightness</p>
+            <p className='font-bold w-28 text-white '>Brightness</p>
           </div>
 
-          <input
-            className='w-full py-3 bg-black text-white px-4 rounded-lg'
-            type='text'
-            value={colorName}
-            onChange={(e) => setColorName(e.target.value)}
-          />
           <div className='flex gap-2'>
             <CopyButton onClick={() => handleCopy(gradientColors)}>
               Copy Code
@@ -78,23 +78,25 @@ function ColorGradient() {
           </div>
         </section>
       </header>
-      <main className=' border-gray-800  black color-wrapper'>
-        {Object.entries(gradientColors).map(([key, value]) => (
-          <div
-            className={`  border-gray-800 flex h-full py-3  justify-start items-center`}
-            key={key}
-            style={{ backgroundColor: value }}
-          >
-            <p
-              className={`${
-                key.includes('500') && 'font-bold'
-              } color-row flex justify-start items-center bg-gray-800  w-60 rounded-r-xl `}
+      <div className='w-full bg-gray-800 flex items-center justify-center pb-8'>
+        <main className='lg:w-1/2 w-full border-w-800 black color-wrapper rounded-xl'>
+          {Object.entries(gradientColors).map(([key, value]) => (
+            <div
+              className={` border-gray-800 flex h-full py-3  justify-start items-center`}
+              key={key}
+              style={{ backgroundColor: value }}
             >
-              {key}: {value};
-            </p>
-          </div>
-        ))}
-      </main>
+              <p
+                className={`${
+                  key.includes('500') && 'font-bold'
+                } color-row flex justify-start items-center bg-gray-900 w-60 rounded-r-xl `}
+              >
+                {key}: {value};
+              </p>
+            </div>
+          ))}
+        </main>
+      </div>
     </>
   )
 }

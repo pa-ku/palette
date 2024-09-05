@@ -23,6 +23,9 @@
   --primary-1000: #000000;
 }
 
+body {
+  background-color: black;
+}
 h1 {
   font-weight: 200;
 }
@@ -103,12 +106,12 @@ input[type='range'] {
   -webkit-appearance: none;
   appearance: none;
   background: #d4d4d4;
-  background-image: linear-gradient(to right, #9a9a9a, #000000);
-  border-radius: 5px;
+  background-image: linear-gradient(to right, #ffffff, #747474);
+  border-radius: 10px;
   width: 100%;
   padding: 4px;
   cursor: pointer;
-  accent-color: white;
+  accent-color: rgb(0, 0, 0);
 }
 
 .range-ctn {
