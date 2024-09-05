@@ -78,8 +78,8 @@ function ColorGradient() {
           </div>
         </section>
       </header>
-      <div className='w-full bg-gray-800 flex items-center justify-center pb-8'>
-        <main className='lg:w-1/2 w-full border-w-800 black color-wrapper rounded-xl'>
+      <div className='w-full  bg-gray-800 flex items-center justify-center pb-8'>
+        <main className='lg:w-1/2 w-full border-w-800 black color-wrapper border-4 border-gray-700'>
           {Object.entries(gradientColors).map(([key, value]) => (
             <div
               className={` border-gray-800 flex h-full py-3  justify-start items-center`}
