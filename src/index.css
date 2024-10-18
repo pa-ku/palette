@@ -45,13 +45,7 @@ h1 {
   font-weight: 200;
 }
 
-.color-row {
-  height: 60px;
-  font: bold;
-  color: white;
 
-  padding-inline: 1em;
-}
 .color-wrapper {
   height: 100%;
 }
@@ -124,7 +118,7 @@ input[type='range'] {
   background-image: linear-gradient(to right, #ffffff, #c4c4c4);
   border-radius: 5px;
   width: 100%;
-  padding: 4px;
+  padding: 1px;
   cursor: pointer;
   accent-color: rgb(0, 0, 0);
 }
