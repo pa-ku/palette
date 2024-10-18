@@ -3,7 +3,7 @@ export default function CopyButton({ children, onClick }) {
     <>
       <button
         onClick={onClick}
-        className='flex border-2 border-white font-bold  px-3 py-1 text-white rounded-lg hover:bg-white stroke-white hover:text-black hover:stroke-black'
+        className='flex border-2 border-slate-500 font-bold  px-3 py-1 text-slate-400 rounded-lg hover:bg-white stroke-gray-500  hover:text-black hover:stroke-black'
       >
         <svg
           width='25'
