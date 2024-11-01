@@ -101,6 +101,7 @@ function ColorGradient() {
                 className='peer absolute h-full w-full cursor-pointer appearance-none'
                 type='radio'
                 onChange={() => setMode(false)}
+                defaultChecked
               />
               <p className='pointer-events-none rounded-xl border-2 border-gray-400 border-dashed px-4 py-2 font-bold peer-checked:bg-white peer-checked:text-gray-800'>
                 Tailwind
