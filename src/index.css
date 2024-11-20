@@ -47,6 +47,9 @@
   --secundary-900: #005cb3;
   --secundary-1000: #004a8f;
 }
+body {
+  background-color: #1f2937;
+}
 
 h1 {
   font-weight: 200;

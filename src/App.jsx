@@ -6,7 +6,7 @@ import { hslToHex } from './libs/hslToHex'
 import TailwindConfig from './components/TailwindConfig'
 
 const MIN_RANGE = 1
-const MAX_RANGE = 9
+const MAX_RANGE = 12
 function ColorGradient() {
   const [baseColor, setBaseColor] = useState('#42a4ff')
   const [colorName, setColorName] = useState('primary')
@@ -35,6 +35,12 @@ function ColorGradient() {
     const gradientColor = generateGradientColors(baseColor)
     setGradientColors(gradientColor)
   }, [baseColor, mode, colorName, range])
+
+  const [copyCode, setCopyCode] = useState()
+
+  function copyColor(e) {
+    setCopyCode
+  }
 
   return (
     <>
@@ -92,8 +98,11 @@ function ColorGradient() {
           </div>
         </section>
       </header>
-      <div className='w-full flex-col bg-gray-800 flex items-center justify-center '>
-        <div className='bg-gray-900 w-full p-3 flex gap-5'>
+      <div className='w-full flex-col flex items-center justify-center '>
+        <div className=' w-full p-5 flex gap-5  items-center justify-center'>
+          <CopyButton onClick={() => handleCopy(gradientColors)}>
+            Copiar
+          </CopyButton>
           <div className='flex flex-row gap-2 '>
             <div className='relative flex w-fit items-center text-white justify-center'>
               <input
@@ -119,26 +128,37 @@ function ColorGradient() {
               </p>
             </div>
           </div>
-          <CopyButton onClick={() => handleCopy(gradientColors)}>
-            Copiar Codigo
-          </CopyButton>
         </div>
-        <main className='w-full   black color-wrapper'>
+        <main className='w-full flex h-full items-center gap-1 flex-wrap justify-center '>
           {Object.entries(gradientColors).map(([key, value]) => (
-            <div
-              className={` border-gray-800 flex h-full py-5  justify-start items-center`}
-              key={key}
-              style={{ backgroundColor: value }}
-            >
-              <p
-                className={`${
-                  key.includes('500') && 'border-l-4  pl-2 '
-                } h-10 text-white  flex justify-start pl-2 items-center bg-gray-900/60 backdrop-blur-md w-60 rounded-r-xl `}
+            <>
+              <button
+                className='flex flex-col w-30 gap-1 relative'
+                onClick={copyColor}
               >
-                {key}: {value}
-                {mode ? ';' : ','}
-              </p>
-            </div>
+                <p className='absolute w-full items-center hidden justify-center'>
+                  Copiado!
+                </p>
+                <div
+                  className='flex w-28 h-20 py-5  rounded-xl  justify-start items-center'
+                  key={key}
+                  style={{ backgroundColor: value, borderColor: value + 5 }}
+                ></div>
+                <div>
+                  <p
+                    className={`${
+                      key.includes('500') && 'font-bold '
+                    }  text-white text-xs`}
+                  >
+                    {key}:
+                  </p>
+                  <p className='text-xs text-gray-400'>
+                    {value}
+                    {mode ? ';' : ','}
+                  </p>
+                </div>
+              </button>
+            </>
           ))}
         </main>
       </div>
