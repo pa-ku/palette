@@ -36,15 +36,36 @@ function ColorGradient() {
     setGradientColors(gradientColor)
   }, [baseColor, mode, colorName, range])
 
-  const [copyCode, setCopyCode] = useState()
+  const [copied, setCopied] = useState(false)
 
-  function copyColor(e) {
-    setCopyCode
+  function handleCopyAll() {
+    handleCopy(gradientColors)
+    setCopied(true)
+    setTimeout(() => {
+      setCopied(false)
+    }, 2000)
+  }
+
+  function copyColor(value) {
+    navigator.clipboard.writeText(value)
+
+    setCopied(true)
+    setTimeout(() => {
+      setCopied(false)
+    }, 2000)
   }
 
   return (
     <>
-      <header className=' py-20 relative bg-gray-800  text-white w-full h-full flex items-center flex-col'>
+      <header className='py-20 relative bg-gray-800  text-white w-full h-full flex items-center flex-col'>
+        <p
+          className={`${
+            copied && 'opacity-95 scale-95'
+          }  top-0 absolute px-5 py-3 m-3 scale-0 duration-200 opacity-0 bg-black w-max rounded-xl items-center flex justify-center`}
+        >
+          Copiado!
+        </p>
+
         <h1 className=' flex items-center justify-center text-xl lg:text-8xl text-center  text-white pb-10 stroke-white fill-white font-thin'>
           <svg
             className='size-24 lg:size-32'
@@ -100,9 +121,7 @@ function ColorGradient() {
       </header>
       <div className='w-full flex-col flex items-center justify-center '>
         <div className=' w-full p-5 flex gap-5  items-center justify-center'>
-          <CopyButton onClick={() => handleCopy(gradientColors)}>
-            Copiar
-          </CopyButton>
+          <CopyButton onClick={handleCopyAll}>Copiar</CopyButton>
           <div className='flex flex-row gap-2 '>
             <div className='relative flex w-fit items-center text-white justify-center'>
               <input
@@ -134,17 +153,14 @@ function ColorGradient() {
             <>
               <button
                 className='flex flex-col w-30 gap-1 relative'
-                onClick={copyColor}
+                onClick={() => copyColor(value)}
               >
-                <p className='absolute w-full items-center hidden justify-center'>
-                  Copiado!
-                </p>
                 <div
-                  className='flex w-28 h-20 py-5  rounded-xl  justify-start items-center'
+                  className='flex w-28 h-20 py-5  rounded-md  justify-start items-center'
                   key={key}
                   style={{ backgroundColor: value, borderColor: value + 5 }}
                 ></div>
-                <div>
+                <div className='flex flex-col items-start'>
                   <p
                     className={`${
                       key.includes('500') && 'font-bold '
