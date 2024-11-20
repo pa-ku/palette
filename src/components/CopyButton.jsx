@@ -3,10 +3,10 @@ export default function CopyButton({ children, onClick }) {
     <>
       <button
         onClick={onClick}
-        className='flex group relative text-white overflow-hidden px-2 items-center justify-center py-1 font-bold duration-500 hover:text-black'
+        className='flex group relative text-gray-400 overflow-hidden px-2 items-center justify-center py-1 font-bold  hover:text-white'
       >
         <svg
-          className='size-6 relative duration-500 z-10 group-hover:stroke-black stroke-white'
+          className='size-6 relative z-10 group-hover:stroke-white stroke-gray-400'
           viewBox='0 0 24 24'
           strokeWidth='2'
           fill='none'
@@ -18,7 +18,6 @@ export default function CopyButton({ children, onClick }) {
           <path d='M9 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z' />
         </svg>
         <p className='relative z-10 '>{children}</p>
-        <span className='absolute right-full top-0  h-full w-full bg-white duration-500 ease-out group-hover:right-0' />
       </button>
     </>
   )

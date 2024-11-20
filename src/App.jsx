@@ -66,7 +66,7 @@ function ColorGradient() {
           Copiado!
         </p>
 
-        <h1 className=' flex items-center justify-center text-xl lg:text-8xl text-center  text-white pb-10 stroke-white fill-white font-thin'>
+        <h1 className=' flex items-center justify-center text-6xl lg:text-8xl text-center  text-white pb-10 stroke-white fill-white font-thin'>
           <svg
             className='size-24 lg:size-32'
             viewBox='0 0 24 24'
@@ -99,6 +99,8 @@ function ColorGradient() {
           <input
             className='border-2 border-gray-700 w-full py-2 bg-gray-900 text-white  px-4 rounded-lg'
             type='text'
+            maxLength={13}
+            placeholder='Nombre'
             value={colorName}
             onChange={(e) => setColorName(e.target.value)}
           />
@@ -119,11 +121,11 @@ function ColorGradient() {
           </div>
         </section>
       </header>
-      <div className='w-full flex-col flex items-center justify-center '>
+      <div className='  w-full flex-col flex items-center justify-center '>
         <div className=' w-full p-5 flex gap-5  items-center justify-center'>
           <CopyButton onClick={handleCopyAll}>Copiar</CopyButton>
-          <div className='flex flex-row gap-2 '>
-            <div className='relative flex w-fit items-center text-white justify-center'>
+          <div className=' flex flex-row gap-2 '>
+            <div className=' relative flex w-fit items-center text-white justify-center'>
               <input
                 name='mode'
                 className='peer absolute h-full w-full cursor-pointer appearance-none'
@@ -135,7 +137,7 @@ function ColorGradient() {
                 Tailwind
               </p>
             </div>
-            <div className='relative flex w-fit items-center justify-center text-white'>
+            <div className=' relative flex w-fit items-center justify-center text-white'>
               <input
                 name='mode'
                 className='peer absolute h-full w-full cursor-pointer appearance-none'
@@ -148,15 +150,15 @@ function ColorGradient() {
             </div>
           </div>
         </div>
-        <main className='w-full flex h-full items-center gap-1 flex-wrap justify-center '>
+        <main className='w-full flex h-full pb-5 items-center gap-1 flex-wrap justify-center '>
           {Object.entries(gradientColors).map(([key, value]) => (
             <>
               <button
-                className='flex flex-col w-30 gap-1 relative'
+                className='flex flex-col w-36 gap-1 relative'
                 onClick={() => copyColor(value)}
               >
                 <div
-                  className='flex w-28 h-20 py-5  rounded-md  justify-start items-center'
+                  className='flex w-full h-20 py-5  rounded-md  justify-start items-center'
                   key={key}
                   style={{ backgroundColor: value, borderColor: value + 5 }}
                 ></div>
