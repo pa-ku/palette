@@ -157,7 +157,7 @@ function ColorGradient() {
             {Object.entries(gradientColors).map(([key, value]) => (
               <>
                 <button
-                  className='flex flex-col w-36 gap-1 relative'
+                  className='flex flex-col hover:outline-1 hover:bg-gray-700 p-1  rounded-xl duration-200 w-36 gap-1 relative'
                   onClick={() => copyColor(value)}
                 >
                   <div
