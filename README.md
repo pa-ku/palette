@@ -1,7 +1,8 @@
 # Tailwind Palete 🎨
 
-Es una solucion para crear rapidamente una gama de colores consistente, y que te permite agregarlo de una forma rapida y dinamica
+Una forma sencilla y dinamica de generar una paleta de colores lista para utilizar en Css y tailwind por igual
 
-Sitio: https://tailwind-palete.vercel.app/
+Sitio: [https://tailwind-palete.vercel.app/](https://tailpalette.vercel.app/)
 
-![2024-09-03-17-39-06-_online-video-cutter com_](https://github.com/user-attachments/assets/08f8cb7a-afe6-4d00-99f5-4c65e5611c56)
+
+![screencapture-tailpalette-vercel-app-2024-11-20-14_06_10](https://github.com/user-attachments/assets/c6eae42d-b4df-41da-9997-26e0b64eb727)
