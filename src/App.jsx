@@ -153,7 +153,7 @@ function ColorGradient() {
               </div>
             </div>
           </div>
-          <div className='w-full flex h-full  items-center gap-1 flex-wrap justify-center '>
+          <div className='w-full flex h-full  items-center  flex-wrap justify-center '>
             {Object.entries(gradientColors).map(([key, value]) => (
               <>
                 <button
