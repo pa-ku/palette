@@ -58,16 +58,18 @@ function ColorGradient() {
 
   return (
     <>
-      <div className='space-y-12'>
-        <header className='pt-20 relative bg-gray-800  text-white w-full h-full flex items-center flex-col'>
-          <p
-            className={`${
-              copied && 'opacity-95 scale-95'
-            }  top-0 absolute px-5 py-3 m-3 scale-0 duration-200 opacity-0 bg-black w-max rounded-xl items-center flex justify-center`}
-          >
-            Copiado!
-          </p>
+      <div
+        className={`${
+          copied && 'opacity-95 scale-95'
+        } w-full flex fixed h-max top-0 duration-200 z-50 items-center justify-center scale-0  opacity-0`}
+      >
+        <p className=' px-5 py-3 m-3 text-white duration-200  bg-black w-max rounded-xl'>
+          Copiado!
+        </p>
+      </div>
 
+      <div className='space-y-12 py-20'>
+        <header className=' relative bg-gray-800  text-white w-full h-full flex items-center flex-col'>
           <h1 className=' flex items-center justify-center text-6xl lg:text-8xl text-center  text-white pb-10 stroke-white fill-white font-thin'>
             <svg
               className='size-24 lg:size-32'
@@ -186,7 +188,7 @@ function ColorGradient() {
 
         <div className='flex items-center justify-center flex-col'></div>
         <div className='w-full flex items-center justify-center'>
-          <PickColor></PickColor>
+          <PickColor setBaseColor={setBaseColor}></PickColor>
         </div>
       </div>
     </>
