@@ -113,7 +113,7 @@ function ColorGradient() {
               value={range}
               onChange={(e) => setRange(e.target.value)}
             />
-            <p className='font-bold w-28 text-gray-600 '>Brightness</p>
+            <p className='font-bold w-28 text-gray-600 '>Rango</p>
           </div>
 
           <div className='flex gap-2'>
