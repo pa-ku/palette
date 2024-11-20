@@ -93,7 +93,7 @@ function ColorGradient() {
         </section>
       </header>
       <div className='w-full flex-col bg-gray-800 flex items-center justify-center '>
-        <div className='bg-gray-700 w-full p-3 flex gap-5'>
+        <div className='bg-gray-900 w-full p-3 flex gap-5'>
           <div className='flex flex-row gap-2 '>
             <div className='relative flex w-fit items-center text-white justify-center'>
               <input
