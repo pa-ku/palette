@@ -88,14 +88,14 @@ function ColorGradient() {
           </div>
 
           <div className='flex gap-2'>
-            <CopyButton onClick={() => handleCopy(gradientColors)}>
-              Copy Code
-            </CopyButton>
-
             <TailwindConfig name={colorName}>Tailwind Config</TailwindConfig>
           </div>
-          <div className='flex flex-row gap-2'>
-            <div className='relative flex w-fit items-center justify-center'>
+        </section>
+      </header>
+      <div className='w-full flex-col bg-gray-800 flex items-center justify-center '>
+        <div className='bg-gray-700 w-full p-3 flex gap-5'>
+          <div className='flex flex-row gap-2 '>
+            <div className='relative flex w-fit items-center text-white justify-center'>
               <input
                 name='mode'
                 className='peer absolute h-full w-full cursor-pointer appearance-none'
@@ -103,25 +103,26 @@ function ColorGradient() {
                 onChange={() => setMode(false)}
                 defaultChecked
               />
-              <p className='pointer-events-none rounded-xl border-2 border-gray-400 border-dashed px-4 py-2 font-bold peer-checked:bg-white peer-checked:text-gray-800'>
+              <p className='pointer-events-none  border-2 border-white border-dashed px-4 py-1 font-bold peer-checked:bg-white  peer-checked:text-gray-800'>
                 Tailwind
               </p>
             </div>
-            <div className='relative flex w-fit items-center justify-center'>
+            <div className='relative flex w-fit items-center justify-center text-white'>
               <input
                 name='mode'
                 className='peer absolute h-full w-full cursor-pointer appearance-none'
                 type='radio'
                 onChange={() => setMode(true)}
               />
-              <p className='pointer-events-none rounded-xl border-2 border-gray-400 border-dashed px-4 py-2 font-bold peer-checked:bg-white peer-checked:text-gray-800'>
+              <p className='pointer-events-none border-2 border-white border-dashed px-4 py-1 font-bold peer-checked:bg-white peer-checked:text-gray-800'>
                 Css
               </p>
             </div>
           </div>
-        </section>
-      </header>
-      <div className='w-full  bg-gray-800 flex items-center justify-center '>
+          <CopyButton onClick={() => handleCopy(gradientColors)}>
+            Copiar Codigo
+          </CopyButton>
+        </div>
         <main className='w-full   black color-wrapper'>
           {Object.entries(gradientColors).map(([key, value]) => (
             <div
