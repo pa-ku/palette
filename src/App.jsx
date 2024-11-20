@@ -58,7 +58,7 @@ function ColorGradient() {
 
   return (
     <>
-      <div className='space-y-10'>
+      <div className='space-y-12'>
         <header className='pt-20 relative bg-gray-800  text-white w-full h-full flex items-center flex-col'>
           <p
             className={`${
@@ -124,63 +124,66 @@ function ColorGradient() {
           </section>
         </header>
 
-        <div className=' w-full p-5 flex gap-5  items-center justify-center'>
-          <CopyButton onClick={handleCopyAll}>Copiar</CopyButton>
-          <div className=' flex flex-row gap-2 '>
-            <div className=' relative flex w-fit items-center text-white justify-center'>
-              <input
-                name='mode'
-                className='peer absolute h-full w-full cursor-pointer appearance-none'
-                type='radio'
-                onChange={() => setMode(false)}
-                defaultChecked
-              />
-              <p className='pointer-events-none  border-2 border-white border-dashed px-4 py-1 font-bold peer-checked:bg-white  peer-checked:text-gray-800'>
-                Tailwind
-              </p>
-            </div>
-            <div className=' relative flex w-fit items-center justify-center text-white'>
-              <input
-                name='mode'
-                className='peer absolute h-full w-full cursor-pointer appearance-none'
-                type='radio'
-                onChange={() => setMode(true)}
-              />
-              <p className='pointer-events-none border-2 border-white border-dashed px-4 py-1 font-bold peer-checked:bg-white peer-checked:text-gray-800'>
-                Css
-              </p>
+        <main className='space-y-3'>
+          <div className='w-full flex gap-5  items-center justify-center'>
+            <CopyButton onClick={handleCopyAll}>Copiar</CopyButton>
+            <div className=' flex flex-row gap-2 '>
+              <div className=' relative flex w-fit items-center text-white justify-center'>
+                <input
+                  name='mode'
+                  className='peer absolute h-full w-full cursor-pointer appearance-none'
+                  type='radio'
+                  onChange={() => setMode(false)}
+                  defaultChecked
+                />
+                <p className='pointer-events-none  border-2 border-white border-dashed px-4 py-1 font-bold peer-checked:bg-white  peer-checked:text-gray-800'>
+                  Tailwind
+                </p>
+              </div>
+              <div className=' relative flex w-fit items-center justify-center text-white'>
+                <input
+                  name='mode'
+                  className='peer absolute h-full w-full cursor-pointer appearance-none'
+                  type='radio'
+                  onChange={() => setMode(true)}
+                />
+                <p className='pointer-events-none border-2 border-white border-dashed px-4 py-1 font-bold peer-checked:bg-white peer-checked:text-gray-800'>
+                  Css
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-        <main className='w-full flex h-full pb-5 items-center gap-1 flex-wrap justify-center '>
-          {Object.entries(gradientColors).map(([key, value]) => (
-            <>
-              <button
-                className='flex flex-col w-36 gap-1 relative'
-                onClick={() => copyColor(value)}
-              >
-                <div
-                  className='flex w-full h-20 py-5  rounded-md  justify-start items-center'
-                  key={key}
-                  style={{ backgroundColor: value, borderColor: value + 5 }}
-                ></div>
-                <div className='flex flex-col items-start'>
-                  <p
-                    className={`${
-                      key.includes('500') && 'font-bold '
-                    }  text-white text-xs`}
-                  >
-                    {key}:
-                  </p>
-                  <p className='text-xs text-gray-400'>
-                    {value}
-                    {mode ? ';' : ','}
-                  </p>
-                </div>
-              </button>
-            </>
-          ))}
+          <div className='w-full flex h-full  items-center gap-1 flex-wrap justify-center '>
+            {Object.entries(gradientColors).map(([key, value]) => (
+              <>
+                <button
+                  className='flex flex-col w-36 gap-1 relative'
+                  onClick={() => copyColor(value)}
+                >
+                  <div
+                    className='flex w-full h-20 py-5  rounded-md  justify-start items-center'
+                    key={key}
+                    style={{ backgroundColor: value, borderColor: value + 5 }}
+                  ></div>
+                  <div className='flex flex-col items-start'>
+                    <p
+                      className={`${
+                        key.includes('500') && 'font-bold '
+                      }  text-white text-xs`}
+                    >
+                      {key}:
+                    </p>
+                    <p className='text-xs text-gray-400'>
+                      {value}
+                      {mode ? ';' : ','}
+                    </p>
+                  </div>
+                </button>
+              </>
+            ))}
+          </div>
         </main>
+
         <div className='flex items-center justify-center flex-col'></div>
         <div className='w-full flex items-center justify-center'>
           <PickColor></PickColor>
