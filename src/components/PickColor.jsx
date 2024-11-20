@@ -37,7 +37,7 @@ function PickColorPaste() {
       className='p-4 w-full md:w-[35em] flex items-center justify-center flex-col bg-gray-900 text-white'
       onPaste={handlePaste}
     >
-      <h1 className='text-4xl'>PickColor - Paste</h1>
+      <h1 className='text-4xl'>Color Picker</h1>
       <p className='mt-2 text-sm text-gray-400'>
         Presioná <kbd>Ctrl</kbd> + <kbd>V</kbd> para pegar una captura de
         pantalla.
