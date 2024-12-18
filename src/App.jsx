@@ -7,7 +7,7 @@ import TailwindConfig from './components/TailwindConfig'
 import PickColor from './components/PickColor'
 
 const MIN_RANGE = 1
-const MAX_RANGE = 12
+const MAX_RANGE = 9
 function ColorGradient() {
   const [baseColor, setBaseColor] = useState('#42a4ff')
   const [colorName, setColorName] = useState('primary')
@@ -20,9 +20,12 @@ function ColorGradient() {
     const colors = {}
 
     for (let i = MIN_RANGE; i <= MAX_RANGE; i++) {
+      const cssMode = `--${colorName}-${i}00`
+      const tailwindMode = `${i}00`
+
       const step = (5 - i) * range // Ajustamos la luminosidad
       const newL = Math.max(0, Math.min(100, baseHSL[2] + step))
-      colors[`${mode ? `--${colorName}-${i}00` : `${i}00`} `] = hslToHex(
+      colors[`${mode ? cssMode : tailwindMode}`] = hslToHex(
         baseHSL[0],
         baseHSL[1],
         newL
@@ -40,7 +43,7 @@ function ColorGradient() {
   const [copied, setCopied] = useState(false)
 
   function handleCopyAll() {
-    handleCopy(gradientColors)
+    handleCopy(gradientColors, mode, colorName)
     setCopied(true)
     setTimeout(() => {
       setCopied(false)
@@ -59,9 +62,8 @@ function ColorGradient() {
   return (
     <>
       <div
-        className={`${
-          copied && 'opacity-95 scale-95'
-        } w-full flex fixed h-max top-0 duration-200 z-50 items-center justify-center scale-0  opacity-0`}
+        className={`${copied && 'opacity-95 scale-95'
+          } w-full flex fixed h-max top-0 duration-200 z-50 items-center justify-center scale-0  opacity-0`}
       >
         <p className=' px-5 py-3 m-3 text-white duration-200  bg-black w-max rounded-xl'>
           Copiado!
@@ -129,31 +131,28 @@ function ColorGradient() {
         <main className='space-y-3'>
           <div className='w-full flex gap-5  items-center justify-center'>
             <CopyButton onClick={handleCopyAll}>Copiar</CopyButton>
-            <div className=' flex flex-row gap-2 '>
-              <div className=' relative flex w-fit items-center text-white justify-center'>
-                <input
-                  name='mode'
-                  className='peer absolute h-full w-full cursor-pointer appearance-none'
-                  type='radio'
-                  onChange={() => setMode(false)}
-                  defaultChecked
-                />
-                <p className='pointer-events-none  border-2 border-white border-dashed px-4 py-1 font-bold peer-checked:bg-white  peer-checked:text-gray-800'>
-                  Tailwind
-                </p>
-              </div>
-              <div className=' relative flex w-fit items-center justify-center text-white'>
-                <input
-                  name='mode'
-                  className='peer absolute h-full w-full cursor-pointer appearance-none'
-                  type='radio'
-                  onChange={() => setMode(true)}
-                />
-                <p className='pointer-events-none border-2 border-white border-dashed px-4 py-1 font-bold peer-checked:bg-white peer-checked:text-gray-800'>
-                  Css
-                </p>
-              </div>
-            </div>
+
+            <section className='flex  w-48 h-10 bg-gray-700 rounded-full  '>
+              <button
+                onClick={() => setMode(true)}
+                className={`peer/es es w-24 h-full py-0.5  font-bold  duration-500 ${mode ? 'text-black z-20 ' : 'text-white'}`}
+
+              >
+                Css
+              </button>
+              <button
+                onClick={() => setMode(false)}
+                className={`peer w-24 duration-500 font-bold  py-0.5 h-full relative z-10  ${!mode ? 'text-black ' : ' text-white '}`}
+              >
+                Tailwind
+              </button>
+              <div
+                className={`  bg-black dark:bg-white -10 h-10 rounded-full w-24 absolute duration-500 ${mode ? 'translate-x-0 peer-hover:translate-x-1' : ' peer-hover/es:translate-x-[calc(100%-0.25rem)] translate-x-full'
+                  }`}
+              ></div>
+            </section>
+
+
           </div>
           <div className='w-full flex h-full  items-center  flex-wrap justify-center '>
             {Object.entries(gradientColors).map(([key, value]) => (
@@ -169,9 +168,8 @@ function ColorGradient() {
                   ></div>
                   <div className='flex flex-col items-start'>
                     <p
-                      className={`${
-                        key.includes('500') && 'font-bold '
-                      }  text-white text-xs`}
+                      className={`${key.includes('500') && 'font-bold '
+                        }  text-white text-xs`}
                     >
                       {key}:
                     </p>

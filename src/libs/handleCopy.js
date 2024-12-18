@@ -1,12 +1,15 @@
-export const handleCopy = (gradientColors) => {
+export const handleCopy = (gradientColors, mode, colorName) => {
   const textToCopy = Object.entries(gradientColors)
-    .map(([key, value]) => `  ${key}: ${value};`)
+    .map(([key, value]) => mode ? `${key}: ${value};` : `${key}: '${value}',`)
     .join('\n')
 
-  navigator.clipboard
-    .writeText(textToCopy)
+  mode ? navigator.clipboard
+    .writeText(textToCopy) : navigator.clipboard
+      .writeText(`${colorName}: {${textToCopy}}`)
 
-    .catch((err) => {
-      console.error('Error al copiar al portapapeles:', err)
-    })
+
+      .catch((err) => {
+        console.error('Error al copiar al portapapeles:', err)
+      })
 }
+
