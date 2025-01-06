@@ -1,10 +1,10 @@
 {
-  "name": "tailwind_palete",
+  "name": "palette",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "author": "pakudev",
-  "description": "Una solucion a la creacion de paletas de colores en tailwind",
+  "description": "The easy way to choose the best colors for your website",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

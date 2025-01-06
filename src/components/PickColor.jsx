@@ -118,18 +118,23 @@ export default function PickColor({ setBaseColor }) {
         className='p-4 gap-4 w-full md:w-[50em] flex items-center justify-center flex-col bg-gray-900 text-white'
         onPaste={handlePaste}
       >
-        <h1 className='text-4xl'>Color Picker</h1>
-        <p className='mt-2 text-sm text-gray-300'>
-          Press
-          <kbd className='mx-2 px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg'>
-            Ctrl
-          </kbd>
-          +
-          <kbd className='px-2 mx-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg'>
-            V
-          </kbd>
-          to paste an image.
-        </p>
+        {!preview && <>
+          <h1 className='text-4xl'>Color Picker</h1>
+          <p className='mt-2 text-sm text-gray-300'>
+            Press
+            <kbd className='mx-2 px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg'>
+              Ctrl
+            </kbd>
+            +
+            <kbd className='px-2 mx-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg'>
+              V
+            </kbd>
+            to paste an image.
+          </p>
+        </>
+        }
+
+
         {preview && (
           <div className='mt-4 relative ' ref={containerRef}>
             <canvas

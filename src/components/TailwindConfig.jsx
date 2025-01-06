@@ -16,11 +16,9 @@ export default function TailwindConfig({ children, name = 'test' }) {
         className='bg-black md:w-[35em] p-6 rounded-lg m-auto'
         ref={refModal}
       >
-        <h1 className='text-white text-2xl font-bold'>Configuración</h1>
+        <h1 className='text-white text-2xl font-bold'>How to add Tailwind colors</h1>
         <p className='text-gray-400'>
-          Para utilizar las variables de Css en Tailwind, agrega el siguiente
-          codigo en tu archivo <b>tailwind.config.js</b> dentro de
-          <b> theme y extend</b>
+          To use CSS variables in Tailwind, add the following code to your <b>tailwind.config.js</b> file inside
         </p>
         <div className='text-gray-200  bg-gray-800 rounded-lg my-2 p-3 flex flex-col'>
           <span>{`colors: {`}</span>
@@ -45,7 +43,7 @@ export default function TailwindConfig({ children, name = 'test' }) {
           className='w-full bg-white  rounded-lg mt-2 text-black font-bold py-2'
           onClick={closeModal}
         >
-          Cerrar
+          Close
         </button>
       </dialog>
     </>
