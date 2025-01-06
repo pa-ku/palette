@@ -1,4 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
+import ImgTest1 from '../../assets/test1.webp'
+import ImgTest2 from '../../assets/test2.webp'
+import ImgTest3 from '../../assets/test3.webp'
 
 // Component for pasting images
 export default function PickColor({ setBaseColor }) {
@@ -110,82 +113,96 @@ export default function PickColor({ setBaseColor }) {
   }, [preview])
 
   return (
-    <div
-      className='p-4 gap-4 w-full md:w-[50em] flex items-center justify-center flex-col bg-gray-900 text-white'
-      onPaste={handlePaste}
-    >
-      <h1 className='text-4xl'>Color Picker</h1>
-      <p className='mt-2 text-sm text-gray-400'>
-        Presioná{' '}
-        <kbd className='px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg'>
-          Ctrl
-        </kbd>{' '}
-        +{' '}
-        <kbd className='px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg'>
-          V
-        </kbd>{' '}
-        para pegar una captura de pantalla.
-      </p>
-      {preview && (
-        <div className='mt-4 relative ' ref={containerRef}>
-          <canvas
-            ref={canvasRef}
-            className='border relative  border-gray-500  rounded-lg'
-            onClick={handleCanvasClick}
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-          />
-          {hoverColor && (
-            <div
-              style={{
-                position: 'absolute',
-                top: `${mousePos.y - 25}px`,
-                left: `${mousePos.x - 25}px`,
-                width: '50px',
-                height: '50px',
-                backgroundColor: hoverColor,
-                border: '2px solid white',
-                borderRadius: '50%',
-                pointerEvents: 'none',
-                transform: 'translate(-50%, -50%)',
-              }}
+    <section className='flex justify-center flex-col items-center gap-3'>
+      <div
+        className='p-4 gap-4 w-full md:w-[50em] flex items-center justify-center flex-col bg-gray-900 text-white'
+        onPaste={handlePaste}
+      >
+        <h1 className='text-4xl'>Color Picker</h1>
+        <p className='mt-2 text-sm text-gray-300'>
+          Press
+          <kbd className='mx-2 px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg'>
+            Ctrl
+          </kbd>
+          +
+          <kbd className='px-2 mx-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg'>
+            V
+          </kbd>
+          to paste an image.
+        </p>
+        {preview && (
+          <div className='mt-4 relative ' ref={containerRef}>
+            <canvas
+              ref={canvasRef}
+              className='border relative  border-gray-500  rounded-lg'
+              onClick={handleCanvasClick}
+              onMouseMove={handleMouseMove}
+              onMouseLeave={handleMouseLeave}
             />
-          )}
-          {pickedColor && (
-            
-            <p
-              className='mt-2 text-lg w-full text-center font-bold'
-              style={{ color: pickedColor }}
-            >
-              {pickedColor}
-            </p>
-          )}
-        </div>
-      )}
-      <label className='overflow-hidden relative flex cursor-pointer items-center gap-2 px-8 py-4 font-bold text-gray-500 hover:text-white'>
-        <svg
-          className='pointer-events-none'
-          fill='none'
-          height='32'
-          stroke='currentColor'
-          strokeWidth='2'
-          viewBox='0 0 24 24'
-          width='32'
-        >
-          <path d='M15 8h.01' />
-          <path d='M12.5 21h-6.5a3 3 0 0 1 -3 -3v-12a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v6.5' />
-          <path d='M3 16l5 -5c.928 -.893 2.072 -.893 3 0l4 4' />
-          <path d='M14 14l1 -1c.67 -.644 1.45 -.824 2.182 -.54' />
-          <path d='M16 19h6' />
-          <path d='M19 16v6' />
-        </svg>
-        Busca una imagen
-        <input
-          className='pointer-events-none absolute opacity-0'
-          type='file'
-          onChange={handleFileChange}
-        />
-      </label>
-    </div>
+            {hoverColor && (
+              <div
+                style={{
+                  position: 'absolute',
+                  top: `${mousePos.y - 25}px`,
+                  left: `${mousePos.x - 25}px`,
+                  width: '50px',
+                  height: '50px',
+                  backgroundColor: hoverColor,
+                  border: '2px solid white',
+                  borderRadius: '50%',
+                  pointerEvents: 'none',
+                  transform: 'translate(-50%, -50%)',
+                }}
+              />
+            )}
+            {pickedColor && (
+
+              <p
+                className='mt-2 text-lg w-full text-center font-bold'
+                style={{ color: pickedColor }}
+              >
+                {pickedColor}
+              </p>
+            )}
+          </div>
+        )}
+        <label className='overflow-hidden relative flex cursor-pointer items-center gap-2 px-8 py-4 font-bold text-gray-500 hover:text-white'>
+          <svg
+            className='pointer-events-none'
+            fill='none'
+            height='32'
+            stroke='currentColor'
+            strokeWidth='2'
+            viewBox='0 0 24 24'
+            width='32'
+          >
+            <path d='M15 8h.01' />
+            <path d='M12.5 21h-6.5a3 3 0 0 1 -3 -3v-12a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v6.5' />
+            <path d='M3 16l5 -5c.928 -.893 2.072 -.893 3 0l4 4' />
+            <path d='M14 14l1 -1c.67 -.644 1.45 -.824 2.182 -.54' />
+            <path d='M16 19h6' />
+            <path d='M19 16v6' />
+          </svg>
+          Search Image
+          <input
+            className='pointer-events-none absolute opacity-0'
+            type='file'
+            onChange={handleFileChange}
+          />
+        </label>
+      </div>
+      <h2 className='text-xl text-white'>Or try one of these!</h2>
+      <div className='flex gap-5'>
+        <button onClick={() => setPreview(ImgTest1)} className='overflow-clip size-20  border-slate-100 rounded-full '>
+          <img className='size-full object-cover' src={ImgTest1} alt="" />
+        </button>
+        <button onClick={() => setPreview(ImgTest2)} className='size-20 overflow-clip border-slate-100 rounded-full'>
+          <img className='size-full object-cover' src={ImgTest2} alt="" />
+        </button>
+        <button onClick={() => setPreview(ImgTest3)} className='size-20  overflow-clip border-slate-100 rounded-full'>
+          <img className='size-full object-cover' src={ImgTest3} alt="" />
+        </button>
+      </div>
+    </section>
   )
 }

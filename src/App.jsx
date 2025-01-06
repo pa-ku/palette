@@ -66,7 +66,7 @@ function ColorGradient() {
           } w-full flex fixed h-max top-0 duration-200 z-50 items-center justify-center scale-0  opacity-0`}
       >
         <p className=' px-5 py-3 m-3 text-white duration-200  bg-black w-max rounded-xl'>
-          Copiado!
+          Copied!
         </p>
       </div>
 
@@ -74,7 +74,7 @@ function ColorGradient() {
         <header className=' relative bg-gray-800  text-white w-full h-full flex items-center flex-col'>
           <h1 className=' flex items-center justify-center text-6xl lg:text-8xl text-center  text-white pb-10 stroke-white fill-white font-thin'>
             <svg
-              className='size-24 lg:size-32'
+              className='size-24 lg:size-28'
               viewBox='0 0 24 24'
               strokeWidth='0.4'
               fill='transparent'
@@ -130,7 +130,7 @@ function ColorGradient() {
 
         <main className='space-y-3'>
           <div className='w-full flex gap-5  items-center justify-center'>
-            <CopyButton onClick={handleCopyAll}>Copiar</CopyButton>
+            <CopyButton onClick={handleCopyAll}>Copy</CopyButton>
 
             <section className='flex  w-48 h-10 bg-gray-700 rounded-full  '>
               <button

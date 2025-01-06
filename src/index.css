@@ -123,13 +123,12 @@ footer {
 input[type='range'] {
   -webkit-appearance: none;
   appearance: none;
-  background: #d4d4d4;
-  background-image: linear-gradient(to right, #ffffff, #c4c4c4);
+  background-image: linear-gradient(to right, #000000, #000000);
   border-radius: 5px;
   width: 100%;
-  padding: 1px;
+
   cursor: pointer;
-  accent-color: rgb(0, 0, 0);
+  accent-color: white;
 }
 
 .range-ctn {
