@@ -2,7 +2,20 @@
 
 Una forma sencilla y dinamica de generar una paleta de colores lista para utilizar en Css y tailwind por igual
 
-Sitio: [https://tailwind-palete.vercel.app/](https://tailpalette.vercel.app/)
+🔗 Demo en vivo: https://tailwind-palete.vercel.app/
 
+<kbd>
+<img src="https://github.com/user-attachments/assets/bb2a7633-deed-4386-969f-f2d6486bb4b9" width="800" >
+</kbd>
 
-![screencapture-tailpalette-vercel-app-2024-11-20-14_06_10](https://github.com/user-attachments/assets/c6eae42d-b4df-41da-9997-26e0b64eb727)
+## 🌟 Características
+- Genera paletas de colores personalizadas
+- Exporta a variables CSS
+- Exporta a configuración de Tailwind CSS
+- Vista previa en tiempo real
+- Interfaz simple e intuitiva
+- Diseño responsive
+
+## 🛠️ Construido Con
+- React
+- Tailwind CSS
