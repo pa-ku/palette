@@ -18,5 +18,6 @@
 ``React`` ``Vite`` ``Tailwind``
 
 <kbd align="center">
-<img src="https://github.com/user-attachments/assets/bb2a7633-deed-4386-969f-f2d6486bb4b9" width="600" >
+<img src="https://github.com/user-attachments/assets/a52098f8-c9c2-4ab9-8eb6-e079f5afda58" width="600">
 </kbd>
+
