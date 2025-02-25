@@ -1,11 +1,13 @@
-# Tailwind Palete 🎨
+<h1 align="center"> Tailwind Palete 🎨</h1>
 
-Una forma sencilla y dinamica de generar una paleta de colores lista para utilizar en Css y tailwind por igual
+<div align="center">
 
-🔗 Demo en vivo: https://tailwind-palete.vercel.app/
-
-<kbd>
-<img src="https://github.com/user-attachments/assets/bb2a7633-deed-4386-969f-f2d6486bb4b9" width="800" >
+<p >Una forma sencilla y dinamica de generar una paleta de colores lista para utilizar en Css y tailwind por igual
+<p>
+<a align="center" href="https://palette.paku.com.ar/">palette.paku.com.ar</a>  
+</div>
+<kbd align="center">
+<img src="https://github.com/user-attachments/assets/bb2a7633-deed-4386-969f-f2d6486bb4b9" width="600" >
 </kbd>
 
 ## 🌟 Características
@@ -17,5 +19,5 @@ Una forma sencilla y dinamica de generar una paleta de colores lista para utiliz
 - Diseño responsive
 
 ## 🛠️ Construido Con
-- React
-- Tailwind CSS
+``React`` ``Vite`` ``Tailwind``
+
